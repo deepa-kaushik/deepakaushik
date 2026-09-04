@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepa Kaushik – BIM Architect CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap');
+  :root {
+    --primary: #1a2a3a;
+    --accent: #2e86de;
+    --accent2: #0abde3;
+    --light-bg: #f0f4f8;
+    --text: #2c3e50;
+    --text-light: #ffffff;
+    --border: #dfe6e9;
+    --gradient: linear-gradient(135deg, #1a2a3a 0%, #2e86de 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--text);
+    background: #e8ecf1;
+    line-height: 1.6;
+  }
+  .cv-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .header {
+    background: var(--gradient);
+    color: var(--text-light);
+    padding: 45px 50px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  .photo-frame {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--accent2);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .header-text { flex: 1; }
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header .tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 18px;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    opacity: 0.92;
+  }
+  .contact-bar span { display: flex; align-items: center; gap: 6px; }
+  .contact-bar .icon {
+    display: inline-block;
+    width: 16px; height: 16px;
+    background: var(--accent2);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  .body-wrap {
+    display: flex;
+    min-height: 600px;
+  }
+  .sidebar {
+    width: 300px;
+    background: var(--light-bg);
+    padding: 35px 28px;
+    flex-shrink: 0;
+    border-right: 3px solid var(--accent);
+  }
+  .sidebar h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .sidebar .section { margin-bottom: 30px; }
+  .skill-item { margin-bottom: 10px; }
+  .skill-name {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .skill-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--gradient);
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .edu-item { margin-bottom: 14px; }
+  .edu-item .degree {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--primary);
+  }
+  .edu-item .school {
+    font-size: 12px;
+    color: #636e72;
+  }
+  .edu-item .year {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .cert-item {
+    font-size: 12px;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+  }
+  .cert-item::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 8px;
+    top: 3px;
+  }
+  .main {
+    flex: 1;
+    padding: 35px 40px;
+  }
+  .main .section { margin-bottom: 32px; }
+  .main h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 6px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+  }
+  .profile-text {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: #444;
+    margin-top: 10px;
+  }
+  .exp-item {
+    margin-top: 20px;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent2);
+    position: relative;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: -7px; top: 6px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .exp-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--primary);
+  }
+  .exp-period {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #636e72;
+    margin-bottom: 6px;
+  }
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .project-chip {
+    font-size: 11px;
+    background: var(--light-bg);
+    padding: 3px 10px;
+    border-radius: 4px;
+    color: var(--text);
+    border-left: 3px solid var(--accent2);
+  }
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .highlight-card {
+    background: var(--light-bg);
+    border-radius: 6px;
+    padding: 14px 16px;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+  }
+  .highlight-card .number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--accent);
+  }
+  .highlight-card .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #636e72;
+    font-weight: 600;
+  }
+  .qa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .qa-card {
+    background: var(--light-bg);
+    border-radius: 6px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+  }
+  .qa-card h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 3px;
+  }
+  .qa-card p {
+    font-size: 10.5px;
+    color: #636e72;
+    line-height: 1.5;
+  }
+  .footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 768px) {
+    .body-wrap { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 3px solid var(--accent); }
+    .header-content { flex-direction: column; text-align: center; }
+    .contact-bar { justify-content: center; }
+    .qa-grid, .highlights { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: #fff; }
+    .cv-container { box-shadow: none; margin: 0; border-radius: 0; }
+    .footer { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="cv-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <div class="photo-frame">
+        <img src="photo.jpg" alt="Deepa Kaushik">
+      </div>
+      <div class="header-text">
+        <h1>DEEPA KAUSHIK</h1>
+        <div class="tagline">Lead BIM Architect &amp; Modeller</div>
+        <div class="contact-bar">
+          <span><span class="icon">✆</span> +91 9911650294</span>
+          <span><span class="icon">@</span> deepapandey.pandey@gmail.com</span>
+          <span><span class="icon">◉</span> Faridabad, Haryana, India</span>
+          <span><span class="icon">✈</span> Passport: M3365985</span>
+          <span><span class="icon">⚑</span> Nationality: Indian</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="section">
+        <h3>Core Software</h3>
+        <div class="skill-item">
+          <div class="skill-name">Autodesk Revit (BIM)</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:97%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">AutoCAD</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">SketchUp</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Navisworks Manage</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">BIM 360 / ACC</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Bluebeam Revu</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">PyRevit / Python</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>BIM Expertise</h3>
+        <div class="tag-list">
+          <span class="tag">3D Modelling</span>
+          <span class="tag">LOD 100–500</span>
+          <span class="tag">Clash Detection</span>
+          <span class="tag">BIM Coordination</span>
+          <span class="tag">GFC Drawings</span>
+          <span class="tag">Family Creation</span>
+          <span class="tag">Revit Standards</span>
+          <span class="tag">Sheet Production</span>
+          <span class="tag">MEP Coordination</span>
+          <span class="tag">Design Documentation</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Tools &amp; Standards</h3>
+        <div class="tag-list">
+          <span class="tag" style="background:#2e86de;">ISO 19650</span>
+          <span class="tag" style="background:#2e86de;">CDE Workflows</span>
+          <span class="tag" style="background:#2e86de;">Ideate Automation</span>
+          <span class="tag" style="background:#2e86de;">RTV Tools</span>
+          <span class="tag" style="background:#2e86de;">OpenSpace</span>
+          <span class="tag" style="background:#2e86de;">CM Builder 4D</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="degree">Bachelor of Architecture</div>
+          <div class="school">Sat Priya School of Architecture &amp; Design, Haryana</div>
+          <div class="year">2014 – 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="degree">Diploma in Architecture</div>
+          <div class="school">Govt. Polytechnic For Women, Haryana</div>
+          <div class="year">2005 – 2008</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Registrations</h3>
+        <div class="cert-item"><strong>Council of Architecture (India)</strong></div>
+        <div class="cert-item">Reg. No: CA/2026/199526</div>
+        <div class="cert-item">Valid: Aug 2026 – Dec 2027</div>
+      </div>
+
+      <div class="section">
+        <h3>Sector Experience</h3>
+        <div class="tag-list">
+          <span class="tag">Aviation</span>
+          <span class="tag">Metro / Rail</span>
+          <span class="tag">Hospitality</span>
+          <span class="tag">Sports Stadiums</span>
+          <span class="tag">Mixed-Use</span>
+          <span class="tag">Residential</span>
+          <span class="tag">Retail / Malls</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">Commercial</span>
+          <span class="tag">Masterplanning</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Languages</h3>
+        <div class="cert-item">English – Fluent</div>
+        <div class="cert-item">Hindi – Native</div>
+      </div>
+
+      <div class="section">
+        <h3>Key Strengths</h3>
+        <div class="cert-item">Hard-working &amp; Result-oriented</div>
+        <div class="cert-item">Leadership &amp; Interactive Quality</div>
+        <div class="cert-item">Motivating Nature</div>
+        <div class="cert-item">Communication &amp; Interpersonal Skills</div>
+        <div class="cert-item">Continuous Improvement Mindset</div>
+        <div class="cert-item">Stress &amp; Pressure Tolerance</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- AT A GLANCE -->
+      <div class="section">
+        <h3>At a Glance</h3>
+        <div class="highlights">
+          <div class="highlight-card">
+            <div class="number">18+</div>
+            <div class="label">Years Experience</div>
+          </div>
+          <div class="highlight-card">
+            <div class="number">30+</div>
+            <div class="label">Major Projects</div>
+          </div>
+          <div class="highlight-card">
+            <div class="number">10+</div>
+            <div class="label">Countries</div>
+          </div>
+          <div class="highlight-card">
+            <div class="number">5+</div>
+            <div class="label">Sectors</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL PROFILE -->
+      <div class="section">
+        <h3>Professional Profile</h3>
+        <p class="profile-text">
+          Results-driven <strong>Lead BIM Architect</strong> with <strong>18+ years</strong> of progressive experience spanning concept design through construction documentation across
+          <strong>aviation, metro/rail infrastructure, hospitality, sports, and mixed-use developments</strong>.
+          Expert in Autodesk Revit-based BIM modelling and multi-disciplinary coordination (Structural, MEP, Landscape).
+          Proven track record of delivering high-profile international projects across the <strong>Middle East, Europe, UK, US, and Asia</strong>,
+          consistently ensuring quality, compliance, and on-time delivery.
+          Currently serving as Lead Architect at <strong>Ramboll</strong>, driving BIM excellence on landmark projects including the
+          Nodia International Airport and NEOM Sindalah Island. Proficient in <strong>BIM QA/QC automation</strong> using Python/PyRevit,
+          <strong>ISO 19650</strong> compliance, and <strong>ACC workflow management</strong>.
+        </p>
+      </div>
+
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <div class="section">
+        <h3>Professional Experience</h3>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Lead Architect</span>
+            <span class="exp-period">Jul 2021 – Present</span>
+          </div>
+          <div class="exp-company">Ramboll Pvt. Ltd. · Gurugram, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Noida International Airport – Ancillary Buildings</span>
+            <span class="project-chip">NEOM Sindalah Island, Saudi Arabia – Structural Plans</span>
+            <span class="project-chip">AAB Building, Denmark</span>
+            <span class="project-chip">St. Mary Development, London</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">BIM Architect</span>
+            <span class="exp-period">Oct 2020 – Jul 2021</span>
+          </div>
+          <div class="exp-company">Infocon Pvt. Ltd. · Noida, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Mumbai Metro Line 3 (UG07) – Seepz &amp; MIDC Stations (GFC)</span>
+            <span class="project-chip">Ahmedabad Metro Phase 1 – Kankaria Station (GFC)</span>
+            <span class="project-chip">Qetaifan Island North, Qatar</span>
+            <span class="project-chip">Ghee Kanta &amp; Shahpur Metro Stations, Gujarat (DDC)</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Senior BIM Technologist</span>
+            <span class="exp-period">Mar 2016 – Nov 2018</span>
+          </div>
+          <div class="exp-company">AECOM · Gurgaon, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Shams Marina, Abu Dhabi</span>
+            <span class="project-chip">McDonald's MRP Program, US</span>
+            <span class="project-chip">Mall of Oman</span>
+            <span class="project-chip">Ansam Residential, Abu Dhabi</span>
+            <span class="project-chip">YAS Acres, Abu Dhabi</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Senior BIM Technologist</span>
+            <span class="exp-period">Dec 2014 – Mar 2016</span>
+          </div>
+          <div class="exp-company">Ramboll Pvt. Ltd. · Gurgaon, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Al Rayyan Stadium, Qatar (FIFA World Cup)</span>
+            <span class="project-chip">Hanasaari Hotel, Finland</span>
+            <span class="project-chip">Toftmarken-Dormea, Denmark</span>
+            <span class="project-chip">Hospital Equipment, Finland</span>
+            <span class="project-chip">Linköping Residential, Sweden</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Architect Assistant – BIM Operations</span>
+            <span class="exp-period">2013 – 2014</span>
+          </div>
+          <div class="exp-company">AEC Digital Solutions · Gurgaon, India</div>
+          <div class="project-grid">
+            <span class="project-chip">King's Cross Gasholder Triplets, London</span>
+            <span class="project-chip">The Bund Financial Centre, Shanghai</span>
+            <span class="project-chip">80 Charlotte Street, London</span>
+            <span class="project-chip">Rathbone Square, London</span>
+            <span class="project-chip">Dishui Lake Conference Centre, Shanghai</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Executive – Architecture</span>
+            <span class="exp-period">Feb 2011 – Apr 2013</span>
+          </div>
+          <div class="exp-company">Incubis Consultants Pvt. Ltd. · Delhi, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Avanti Overseas, Panipat</span>
+            <span class="project-chip">Luxury Villas, Rishikesh</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Assistant Architect</span>
+            <span class="exp-period">Mar 2010 – Jan 2011</span>
+          </div>
+          <div class="exp-company">Eigen Technical Services Pvt. Ltd. · Gurgaon, India</div>
+          <div class="project-grid">
+            <span class="project-chip">DLF Corporate Green, Gurugram</span>
+            <span class="project-chip">PRP Stockwell Park, London</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Junior Architect</span>
+            <span class="exp-period">Jun 2008 – Feb 2010</span>
+          </div>
+          <div class="exp-company">Obelisk Pvt. Ltd. · Delhi, India</div>
+          <div class="project-grid">
+            <span class="project-chip">Fairwood GIFT City, Gujarat</span>
+            <span class="project-chip">Vatika Housing, Gurugram</span>
+            <span class="project-chip">Eden Self City, Haryana</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIM QA/QC & AUTOMATION -->
+      <div class="section">
+        <h3>BIM QA/QC &amp; Automation</h3>
+        <div class="qa-grid">
+          <div class="qa-card">
+            <h5>1. Automated Model Audit</h5>
+            <p>Python &amp; PyRevit scripts for clash detection, parameter validation &amp; compliance checks.</p>
+          </div>
+          <div class="qa-card">
+            <h5>2. Revit QA Checklist</h5>
+            <p>Standardised checklists for model integrity, naming conventions &amp; LOD compliance.</p>
+          </div>
+          <div class="qa-card">
+            <h5>3. Drawing &amp; Documentation Quality</h5>
+            <p>Sheet audits, annotation standards &amp; print-ready verification workflows.</p>
+          </div>
+          <div class="qa-card">
+            <h5>4. BIM Coordination &amp; ACC Workflow</h5>
+            <p>ACC issue tracking, model coordination &amp; design review management.</p>
+          </div>
+          <div class="qa-card">
+            <h5>5. Interdisciplinary Coordination</h5>
+            <p>Cross-discipline clash management with Arch, Struct, MEP &amp; Landscape.</p>
+          </div>
+          <div class="qa-card">
+            <h5>6. ACC &amp; Issue Resolution</h5>
+            <p>End-to-end issue lifecycle — identification, assignment, tracking &amp; closure.</p>
+          </div>
+          <div class="qa-card">
+            <h5>7. Self QA (Manual) Checklist</h5>
+            <p>Coordination &amp; ACC QA checklists for pre-submission quality gates.</p>
+          </div>
+          <div class="qa-card">
+            <h5>8. Mistakes Learned &amp; Knowledge Sharing</h5>
+            <p>Lessons-learned documentation &amp; team knowledge transfer sessions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    CONFIDENTIAL &nbsp;·&nbsp; DEEPA KAUSHIK &nbsp;·&nbsp; LEAD BIM ARCHITECT
+  </div>
+</div>
+</body>
+</html>

@@ -6,7 +6,6 @@
 <title>Deepa Kaushik – BIM Architect CV</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap');
-
   :root {
     --primary: #1a2a3a;
     --accent: #2e86de;
@@ -17,16 +16,13 @@
     --border: #dfe6e9;
     --gradient: linear-gradient(135deg, #1a2a3a 0%, #2e86de 100%);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Open Sans', Arial, sans-serif;
     color: var(--text);
     background: #e8ecf1;
     line-height: 1.6;
   }
-
   .cv-container {
     max-width: 900px;
     margin: 30px auto;
@@ -35,7 +31,6 @@
     border-radius: 8px;
     overflow: hidden;
   }
-
   /* ─── HEADER ─── */
   .header {
     background: var(--gradient);
@@ -60,7 +55,43 @@
     border-radius: 50%;
     background: rgba(255,255,255,0.03);
   }
-
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  .photo-frame {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--accent2);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .photo-placeholder {
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .photo-placeholder span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 4px;
+  }
+  .header-text { flex: 1; }
   .header h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -78,7 +109,6 @@
     color: var(--accent2);
     margin-bottom: 18px;
   }
-
   .contact-bar {
     display: flex;
     flex-wrap: wrap;
@@ -99,13 +129,11 @@
     color: var(--primary);
     flex-shrink: 0;
   }
-
   /* ─── BODY LAYOUT ─── */
   .body-wrap {
     display: flex;
     min-height: 600px;
   }
-
   /* Sidebar */
   .sidebar {
     width: 300px;
@@ -114,7 +142,6 @@
     flex-shrink: 0;
     border-right: 3px solid var(--accent);
   }
-
   .sidebar h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -127,9 +154,7 @@
     border-bottom: 2px solid var(--accent);
     display: inline-block;
   }
-
   .sidebar .section { margin-bottom: 30px; }
-
   /* Skills bars */
   .skill-item { margin-bottom: 10px; }
   .skill-name {
@@ -150,7 +175,6 @@
     border-radius: 3px;
     background: var(--gradient);
   }
-
   /* Tags */
   .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
@@ -164,7 +188,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
   .edu-item { margin-bottom: 14px; }
   .edu-item .degree {
     font-weight: 700;
@@ -180,7 +203,6 @@
     color: var(--accent);
     font-weight: 600;
   }
-
   .cert-item {
     font-size: 12px;
     margin-bottom: 6px;
@@ -195,15 +217,12 @@
     font-size: 8px;
     top: 3px;
   }
-
   /* Main Content */
   .main {
     flex: 1;
     padding: 35px 40px;
   }
-
   .main .section { margin-bottom: 32px; }
-
   .main h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -216,14 +235,12 @@
     border-bottom: 3px solid var(--accent);
     display: inline-block;
   }
-
   .profile-text {
     font-size: 13.5px;
     line-height: 1.75;
     color: #444;
     margin-top: 10px;
   }
-
   /* Experience */
   .exp-item {
     margin-top: 20px;
@@ -241,7 +258,6 @@
     border: 2px solid #fff;
     box-shadow: 0 0 0 2px var(--accent);
   }
-
   .exp-header {
     display: flex;
     justify-content: space-between;
@@ -267,7 +283,6 @@
     color: #636e72;
     margin-bottom: 6px;
   }
-
   .project-grid {
     display: flex;
     flex-wrap: wrap;
@@ -282,7 +297,6 @@
     color: var(--text);
     border-left: 3px solid var(--accent2);
   }
-
   /* Key Highlights */
   .highlights {
     display: grid;
@@ -310,7 +324,45 @@
     color: #636e72;
     font-weight: 600;
   }
-
+  /* QA Section */
+  .qa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .qa-card {
+    background: var(--light-bg);
+    border-radius: 6px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+  }
+  .qa-card h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 3px;
+  }
+  .qa-card p {
+    font-size: 10.5px;
+    color: #636e72;
+    line-height: 1.5;
+  }
+  /* Strengths */
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .strength-item {
+    font-size: 12px;
+    padding: 6px 12px;
+    background: var(--light-bg);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent2);
+  }
   /* Footer */
   .footer {
     background: var(--primary);
@@ -320,7 +372,13 @@
     font-size: 10px;
     letter-spacing: 1px;
   }
-
+  @media (max-width: 768px) {
+    .body-wrap { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 3px solid var(--accent); }
+    .header-content { flex-direction: column; text-align: center; }
+    .contact-bar { justify-content: center; }
+    .qa-grid, .highlights { grid-template-columns: 1fr; }
+  }
   @media print {
     body { background: #fff; }
     .cv-container { box-shadow: none; margin: 0; border-radius: 0; }
@@ -333,14 +391,27 @@
 
   <!-- ═══════ HEADER ═══════ -->
   <div class="header">
-    <h1>DEEPA KAUSHIK</h1>
-    <div class="tagline">Lead BIM Architect &amp; Modeller</div>
-    <div class="contact-bar">
-      <span><span class="icon">✆</span> +91 9911650294</span>
-      <span><span class="icon">@</span> deepapandey.pandey@gmail.com</span>
-      <span><span class="icon">◉</span> Faridabad, Haryana, India</span>
-      <span><span class="icon">✈</span> Passport: M3365985</span>
-      <span><span class="icon">⚑</span> Nationality: Indian</span>
+    <div class="header-content">
+      <div class="photo-frame">
+        <!-- ✅ REPLACE "photo.jpg" WITH YOUR ACTUAL PHOTO FILE -->
+        <!-- <img src="photo.jpg" alt="Deepa Kaushik"> -->
+        <!-- Remove the placeholder div below once you add your photo -->
+        <div class="photo-placeholder">
+          <span>📷</span>
+          Your Photo
+        </div>
+      </div>
+      <div class="header-text">
+        <h1>DEEPA KAUSHIK</h1>
+        <div class="tagline">Lead BIM Architect &amp; Modeller</div>
+        <div class="contact-bar">
+          <span><span class="icon">✆</span> +91 9911650294</span>
+          <span><span class="icon">@</span> deepapandey.pandey@gmail.com</span>
+          <span><span class="icon">◉</span> Faridabad, Haryana, India</span>
+          <span><span class="icon">✈</span> Passport: M3365985</span>
+          <span><span class="icon">⚑</span> Nationality: Indian</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -364,12 +435,20 @@
           <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">Navisworks</div>
-          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          <div class="skill-name">Navisworks Manage</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-name">BIM 360 / ACC</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Bluebeam Revu</div>
           <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">PyRevit / Python</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
         </div>
       </div>
 
@@ -386,6 +465,18 @@
           <span class="tag">Sheet Production</span>
           <span class="tag">MEP Coordination</span>
           <span class="tag">Design Documentation</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Tools &amp; Standards</h3>
+        <div class="tag-list">
+          <span class="tag" style="background:#2e86de;">ISO 19650</span>
+          <span class="tag" style="background:#2e86de;">CDE Workflows</span>
+          <span class="tag" style="background:#2e86de;">Ideate Automation</span>
+          <span class="tag" style="background:#2e86de;">RTV Tools</span>
+          <span class="tag" style="background:#2e86de;">OpenSpace</span>
+          <span class="tag" style="background:#2e86de;">CM Builder 4D</span>
         </div>
       </div>
 
@@ -432,12 +523,22 @@
         <div class="cert-item">Hindi – Native</div>
       </div>
 
+      <div class="section">
+        <h3>Key Strengths</h3>
+        <div class="cert-item">Hard-working &amp; Result-oriented</div>
+        <div class="cert-item">Leadership &amp; Interactive Quality</div>
+        <div class="cert-item">Motivating Nature</div>
+        <div class="cert-item">Communication &amp; Interpersonal Skills</div>
+        <div class="cert-item">Continuous Improvement Mindset</div>
+        <div class="cert-item">Stress &amp; Pressure Tolerance</div>
+      </div>
+
     </div>
 
     <!-- ═══════ MAIN ═══════ -->
     <div class="main">
 
-      <!-- KEY NUMBERS -->
+      <!-- AT A GLANCE -->
       <div class="section">
         <h3>At a Glance</h3>
         <div class="highlights">
@@ -460,7 +561,7 @@
         </div>
       </div>
 
-      <!-- PROFILE -->
+      <!-- PROFESSIONAL PROFILE -->
       <div class="section">
         <h3>Professional Profile</h3>
         <p class="profile-text">
@@ -470,11 +571,12 @@
           Proven track record of delivering high-profile international projects across the <strong>Middle East, Europe, UK, US, and Asia</strong>,
           consistently ensuring quality, compliance, and on-time delivery.
           Currently serving as Lead Architect at <strong>Ramboll</strong>, driving BIM excellence on landmark projects including the
-          Nodia International Airport and NEOM Sindalah Island.
+          Nodia International Airport and NEOM Sindalah Island. Proficient in <strong>BIM QA/QC automation</strong> using Python/PyRevit,
+          <strong>ISO 19650</strong> compliance, and <strong>ACC workflow management</strong>.
         </p>
       </div>
 
-      <!-- EXPERIENCE -->
+      <!-- PROFESSIONAL EXPERIENCE -->
       <div class="section">
         <h3>Professional Experience</h3>
 
@@ -587,16 +689,53 @@
             <span class="project-chip">Eden Self City, Haryana</span>
           </div>
         </div>
-
       </div>
-    </div>
 
+      <!-- BIM QA/QC & AUTOMATION -->
+      <div class="section">
+        <h3>BIM QA/QC &amp; Automation</h3>
+        <div class="qa-grid">
+          <div class="qa-card">
+            <h5>1. Automated Model Audit</h5>
+            <p>Python &amp; PyRevit scripts for clash detection, parameter validation &amp; compliance checks.</p>
+          </div>
+          <div class="qa-card">
+            <h5>2. Revit QA Checklist</h5>
+            <p>Standardised checklists for model integrity, naming conventions &amp; LOD compliance.</p>
+          </div>
+          <div class="qa-card">
+            <h5>3. Drawing &amp; Documentation Quality</h5>
+            <p>Sheet audits, annotation standards &amp; print-ready verification workflows.</p>
+          </div>
+          <div class="qa-card">
+            <h5>4. BIM Coordination &amp; ACC Workflow</h5>
+            <p>ACC issue tracking, model coordination &amp; design review management.</p>
+          </div>
+          <div class="qa-card">
+            <h5>5. Interdisciplinary Coordination</h5>
+            <p>Cross-discipline clash management with Arch, Struct, MEP &amp; Landscape.</p>
+          </div>
+          <div class="qa-card">
+            <h5>6. ACC &amp; Issue Resolution</h5>
+            <p>End-to-end issue lifecycle — identification, assignment, tracking &amp; closure.</p>
+          </div>
+          <div class="qa-card">
+            <h5>7. Self QA (Manual) Checklist</h5>
+            <p>Coordination &amp; ACC QA checklists for pre-submission quality gates.</p>
+          </div>
+          <div class="qa-card">
+            <h5>8. Mistakes Learned &amp; Knowledge Sharing</h5>
+            <p>Lessons-learned documentation &amp; team knowledge transfer sessions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="footer">
     CONFIDENTIAL &nbsp;·&nbsp; DEEPA KAUSHIK &nbsp;·&nbsp; LEAD BIM ARCHITECT
   </div>
-
 </div>
 </body>
 </html>
